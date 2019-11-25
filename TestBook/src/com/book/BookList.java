@@ -6,9 +6,9 @@ public class BookList {
     private int usedSize;
 
     public BookList() {
-        books[0] = new Book("三国演义","罗贯中",56,"小说");
-        books[1] = new Book("西游记","吴承恩",76,"小说");
-        books[2] = new Book("水浒传","施耐庵",96,"小说");
+        books[0] = new Book("杨超越","女",170,"女团");
+        books[1] = new Book("周震南","男",170,"男团");
+        books[2] = new Book("宫素","男",210,"男团");
         this.usedSize = 3;
     }
 

@@ -19,12 +19,12 @@ public class Admin extends User {
     @Override
     public int menu() {
         System.out.println("======================");
-        System.out.println("您好，管理员 "+this.name+"！ 欢迎使用图书管理系统！");
-        System.out.println("1.查找图书");
-        System.out.println("2.新增图书");
-        System.out.println("3.删除图书");
-        System.out.println("4.显示所有图书");
-        System.out.println("0.退出系统");
+        System.out.println("您好，SVIP "+this.name+"！ 欢迎进入Produce101专属通道！");
+        System.out.println("1.查询排名");
+        System.out.println("2.新增成员");
+        System.out.println("3.淘汰成员");
+        System.out.println("4.显示所有成员");
+        System.out.println("0.退出该系统");
         System.out.println("======================");
         System.out.println("请您输入操作对应的数字：");
         Scanner scanner = new Scanner(System.in);

@@ -10,9 +10,10 @@ import java.util.Scanner;
 public class Main {
     public  static User login(){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("欢迎来到Produce101");
         System.out.println("请输入您的姓名：");
         String name = scanner.nextLine();
-        System.out.println("请输入您的身份： | 1-》管理员 | 0-》普通用户|");
+        System.out.println("请选择您的身份： | 1-》SVIP人员 | 0-》普通参赛人员|");
         int who = scanner.nextInt();
         if (who == 1){
             return new Admin(name);

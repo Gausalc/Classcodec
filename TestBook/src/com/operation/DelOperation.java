@@ -6,8 +6,8 @@ import com.book.BookList;
 public class DelOperation implements IOperation{
     @Override
     public void work(BookList bookList) {
-        System.out.println("删除图书");
-        System.out.println("请输入要删除的书名：");
+        System.out.println("淘汰成员");
+        System.out.println("请输入要删除的成员：");
         String name = scan.next();
         int i=0;
         Book book = null;
@@ -20,7 +20,7 @@ public class DelOperation implements IOperation{
             }
         }
         if (i == bookList.getUsedSize()){
-            System.out.println("没有此书");
+            System.out.println("没有这个成员！");
             return;
         }
         //i下标就是要删除的书籍

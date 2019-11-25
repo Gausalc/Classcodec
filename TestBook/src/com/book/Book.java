@@ -58,9 +58,9 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", price=" + price +
+                ", sex ='" + author + '\'' +
+                ", height=" + price +
                 ", type='" + type + '\'' +
-                ", "+(isBorrowed== true?"已借出":"未借出"+"}");
+                ", "+(isBorrowed== true?"已签约":"未签约"+"}");
     }
 }
