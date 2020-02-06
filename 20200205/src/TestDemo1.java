@@ -16,15 +16,15 @@ class Solution1 {
 class Solution2 {
     public String addBinary(String a, String b) {
         StringBuilder ans = new StringBuilder();
-        int ca = 0;
+        int tmp = 0;
         for(int i = a.length() - 1, j = b.length() - 1;i >= 0 || j >= 0; i--, j--) {
-            int sum = ca;
+            int sum = tmp;
             sum += i >= 0 ? a.charAt(i) - '0' : 0;
             sum += j >= 0 ? b.charAt(j) - '0' : 0;
             ans.append(sum % 2);
-            ca = sum / 2;
+            tmp = sum / 2;
         }
-        ans.append(ca == 1 ? ca : "");
+        ans.append(tmp == 1 ? tmp : "");
         return ans.reverse().toString();
     }
 }
@@ -34,7 +34,7 @@ class Solution3 {
     public int myAtoi(String str) {
         if(str==null || str.length()==0)
             return 0;
-        //1.跳过空字符; 这里使用str.trim()也可以去掉字符串两端的空字符, 但是不能击败99.96%了...
+        //1.跳过空字符;
         int i =0;
         while(i<str.length() && str.charAt(i)==' '){
             i++;
@@ -80,30 +80,21 @@ class Solution3 {
 class Solution4 {
     public int[] searchRange(int[] nums, int target) {
         int[] targetRange = {-1, -1};
-
-        // find the index of the leftmost appearance of `target`.
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == target) {
                 targetRange[0] = i;
                 break;
             }
         }
-
-        // if the last loop did not find any index, then there is no valid range
-        // and we return [-1, -1].
         if (targetRange[0] == -1) {
             return targetRange;
         }
-
-        // find the index of the rightmost appearance of `target` (by reverse
-        // iteration). it is guaranteed to appear.
         for (int j = nums.length-1; j >= 0; j--) {
             if (nums[j] == target) {
                 targetRange[1] = j;
                 break;
             }
         }
-
         return targetRange;
     }
 }
