@@ -1,40 +1,37 @@
-//验证回文
-class Solution1 {
-    public boolean isPalindrome(String s) {
-        if (s == null) return true;
-        s = s.toLowerCase();
-        int l = s.length();
-        StringBuilder str = new StringBuilder(l);
-        for (char c : s.toCharArray()) {
-            if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')) {
-                str.append(c);
-            }
-        }
-        return str.toString().equals(str.reverse().toString());
+import java.util.HashMap;
+import java.util.Map;
+
+// Definition for a Node.
+class Node {
+    int val;
+    Node next;
+    Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
     }
 }
 
-
-class Solution2 {
-    public int compress(char[] chars) {
-        int size = 0;
-        int count = 1;
-        for (int i = 1; i <= chars.length; i++) {
-            if (i == chars.length || chars[i] != chars[i - 1]) {
-                if (count > 1) {
-                    chars[size++] = chars[i - 1];
-                    char[] chs = String.valueOf(count).toCharArray();
-                    for(char ch: chs){
-                        chars[size++] = ch;
-                    }
-                    count = 1;
-                } else {
-                    chars[size++] = chars[i - 1];
-                }
-            } else {
-                count++;
-            }
+class Solution {
+    public Node copyRandomList(Node head) {
+        if (head == null){
+            return null;
         }
-        return size;
+        Node cur = head;
+        Map<Node,Node> map = new HashMap<>();
+        while (cur!= null){
+            Node node = new Node(cur.val);
+            map.put(cur,node);
+            cur = cur.next;
+        }
+        cur = head;
+        while(cur != null){
+            map.get(cur).next = map.get(cur.next);
+            map.get(cur).random = map.get(cur.random);
+            cur = cur.next;
+        }
+        return map.get(head);
     }
 }
