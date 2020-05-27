@@ -1,11 +1,51 @@
-public class TestDemo1 {
+class A {
+    static {
+        System.out.println("A.static {}");
+    }
+
+    static int i = initI();
+
+    static int initI() {
+        System.out.println("A.initI()");
+        return 0;
+    }
+
+    A() {
+        System.out.println("A()");
+    }
+
+    {
+        System.out.println("A.{}");
+    }
+}
+
+class B extends A {
+    static {
+        System.out.println("B.static {}");
+    }
+
+    static int i = initI();
+
+    static int initI() {
+        System.out.println("B.initI()");
+        return 0;
+    }
+
+    B() {
+        System.out.println("B()");
+    }
+
+    {
+        System.out.println("B.{}");
+    }
+}
+
+class Main
+{
     public static void main(String[] args) {
-        int a = 2;
-        int b = a++;
-        System.out.println(b);
-        System.out.println(a);
-//        int c = ++a;
-//        System.out.println(c);
-//        System.out.println(a);
+        System.out.println("start");
+        new B();
+        new B();
+        System.out.println("end");
     }
 }
