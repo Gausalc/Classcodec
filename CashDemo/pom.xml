@@ -33,6 +33,7 @@
             <version>5.1.47</version>
         </dependency>
         <dependency>
+            <!-- 编解码工具包 -->
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.11</version>
@@ -52,7 +53,7 @@
 
     <build>
         <!-- 指定最终 war 包的名称 -->
-        <finalName>hello-bit-idea</finalName>
+        <finalName>CashDemoWar</finalName>
 
         <!-- 明确指定一些插件的版本，以免受到 maven 版本的影响 -->
         <pluginManagement>
